@@ -1,24 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import EventsCalendar from './Events-calendar/events-calendar';
+import { addDays } from 'date-fns';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <EventsCalendar events={[{date: addDays(new Date, 6), title: 'Edit a video'}, {date: addDays(new Date, 3), title: 'code'}, {date: addDays(new Date, 0), title: 'party'}]} />
   );
 }
 
